@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    const username = localStorage.getItem('username');
+    const welcomeMessage = document.getElementById('welcomeMessage');
+    welcomeMessage.innerHTML = `Welcome, ${role} ${username}!`;
+
     if (role === 'LIBRARIAN') {
         document.getElementById('addBookContainer').style.display = 'block';
         document.getElementById('addBookBtn').addEventListener('click', () => {

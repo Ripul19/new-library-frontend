@@ -26,7 +26,7 @@ function loadHeader() {
     document.getElementById('logoutBtn').addEventListener('click', function() {
         localStorage.removeItem('token');
         localStorage.removeItem('role');
-        window.location.href = 'login.html';
+        window.location.href = '../index.html';
     });
 }
 loadHeader();
