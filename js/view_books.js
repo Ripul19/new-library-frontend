@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>${book.title}</h3>
                 <p><strong>Author:</strong> ${book.author}</p>
                 <p><strong>Published Year:</strong> ${book.publishedYear}</p>
+                <p><strong>Status:</strong> ${book.status}</p>
             `;
             
             bookItem.addEventListener('click', function() {

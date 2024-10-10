@@ -11,11 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.getElementById('addBookForm').addEventListener('submit', function(e) {
+const addBookForm = document.getElementById('addBookForm');
+addBookForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
     const token = localStorage.getItem('token');
 
     if (!token) {
@@ -24,12 +23,15 @@ document.getElementById('addBookForm').addEventListener('submit', function(e) {
         return;
     }
 
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
+
     // API call
     fetch(`${API_BASE_URL}/api/books/add`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ title, author })
     })
